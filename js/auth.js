@@ -58,3 +58,62 @@ signupBtn.addEventListener("click", async () => {
   }
 
 });
+
+loginBtn.addEventListener("click", async () => {
+
+  if (!email.value || !password.value) {
+    alert("Please enter your email and password.");
+    return;
+  }
+
+  try {
+
+    await signInWithEmailAndPassword(
+      auth,
+      email.value,
+      password.value
+    );
+
+    window.location.href = "dashboard.html";
+
+  } catch (error) {
+
+    alert(error.message);
+
+  }
+
+});
+
+googleBtn.addEventListener("click", async () => {
+
+  try {
+
+    const result = await signInWithPopup(auth, provider);
+
+    const user = result.user;
+
+    const userRef = doc(db, "users", user.uid);
+
+    const snap = await getDoc(userRef);
+
+    if (!snap.exists()) {
+
+      await setDoc(userRef, {
+        email: user.email,
+        demoBalance: 100,
+        demoProfit: 0,
+        isAdmin: false,
+        createdAt: new Date().toISOString()
+      });
+
+    }
+
+    window.location.href = "dashboard.html";
+
+  } catch (error) {
+
+    alert(error.message);
+
+  }
+
+});
