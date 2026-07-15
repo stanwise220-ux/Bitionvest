@@ -5,24 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BitionInvest Dashboard</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css">
-
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#0D1117;
+color:white;
+}
 
 .dashboard{
-padding:20px;
-max-width:600px;
+max-width:700px;
 margin:auto;
+padding:20px;
 }
 
 .card{
 background:#161B22;
-padding:20px;
 border-radius:12px;
+padding:20px;
 margin-bottom:20px;
+box-shadow:0 0 10px rgba(0,0,0,.3);
 }
 
 .profile{
@@ -30,30 +39,39 @@ text-align:center;
 }
 
 .avatar{
-width:80px;
-height:80px;
-background:#FFD700;
+width:90px;
+height:90px;
 border-radius:50%;
+background:#FFD700;
 margin:auto;
 margin-bottom:15px;
 }
 
+h2,h3{
+margin-bottom:10px;
+}
+
+#userEmail{
+color:#bbb;
+}
+
 .balance{
-font-size:38px;
+font-size:40px;
 font-weight:bold;
 color:#FFD700;
-margin:10px 0;
+margin:15px 0;
 }
 
 .profit{
-font-size:18px;
+font-size:24px;
 color:#00ff99;
+margin-bottom:15px;
 }
 
 .notice{
 background:#222;
 padding:15px;
-border-left:4px solid #FFD700;
+border-left:5px solid #FFD700;
 border-radius:8px;
 margin-top:15px;
 }
@@ -65,27 +83,26 @@ border:none;
 border-radius:8px;
 font-size:16px;
 font-weight:bold;
-margin-top:15px;
 cursor:pointer;
+margin-top:15px;
 }
 
-.withdraw{
+#withdrawBtn{
 background:#666;
 color:white;
 cursor:not-allowed;
 }
 
-.logout{
-background:#c62828;
+#logoutBtn{
+background:#d32f2f;
 color:white;
 }
 
 small{
-color:#cccccc;
 display:block;
-margin-top:8px;
+margin-top:10px;
+color:#bbb;
 }
-
 </style>
 
 </head>
@@ -100,19 +117,19 @@ margin-top:8px;
 
 <h2>Welcome Back</h2>
 
-<p id="userEmail">real@example.com</p>
+<p id="userEmail">Loading...</p>
 
 </div>
 
 <div class="card">
 
-<h3> Balance</h3>
+<h3>Demo Balance</h3>
 
 <div class="balance" id="balance">
 $100.00
 </div>
 
-<h3> Profit</h3>
+<h3>Demo Profit</h3>
 
 <div class="profit" id="profit">
 $0.00
@@ -120,10 +137,12 @@ $0.00
 
 <div class="notice">
 
-<strong> Credit</strong>
+<strong>🎁 Welcome Bonus</strong>
 
 <p>
-You have received <strong>$100.00</strong> in credits to explore the platform.
+Every new account receives
+<strong>$100.00 Demo Credit</strong>
+to explore the platform.
 </p>
 
 </div>
@@ -139,12 +158,12 @@ Minimum balance required:
 <strong>$500.00</strong>
 </p>
 
-<button class="withdraw" disabled>
+<button id="withdrawBtn" disabled>
 Withdrawal Locked
 </button>
 
 <small>
-Increase your balance to at least $500.00 before a withdrawal request can be submitted.
+Withdrawal becomes available when your demo balance reaches $500.00 or more.
 </small>
 
 </div>
@@ -153,17 +172,19 @@ Increase your balance to at least $500.00 before a withdrawal request can be sub
 
 <h3>Announcements</h3>
 
-<p>
+<p id="announcement">
 No announcements available.
 </p>
 
 </div>
 
-<button class="logout">
+<button id="logoutBtn">
 Logout
 </button>
 
 </div>
+
+<script type="module" src="js/dashboard.js"></script>
 
 </body>
 </html>
