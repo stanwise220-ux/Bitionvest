@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BitionInvest Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.dashboard{
+padding:20px;
+max-width:600px;
+margin:auto;
+}
+
+.card{
+background:#161B22;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.profile{
+text-align:center;
+}
+
+.avatar{
+width:80px;
+height:80px;
+background:#FFD700;
+border-radius:50%;
+margin:auto;
+margin-bottom:15px;
+}
+
+.balance{
+font-size:38px;
+font-weight:bold;
+color:#FFD700;
+margin:10px 0;
+}
+
+.profit{
+font-size:18px;
+color:#00ff99;
+}
+
+.notice{
+background:#222;
+padding:15px;
+border-left:4px solid #FFD700;
+border-radius:8px;
+margin-top:15px;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+margin-top:15px;
+cursor:pointer;
+}
+
+.withdraw{
+background:#666;
+color:white;
+cursor:not-allowed;
+}
+
+.logout{
+background:#c62828;
+color:white;
+}
+
+small{
+color:#cccccc;
+display:block;
+margin-top:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div class="card profile">
+
+<div class="avatar"></div>
+
+<h2>Welcome Back</h2>
+
+<p id="userEmail">real@example.com</p>
+
+</div>
+
+<div class="card">
+
+<h3> Balance</h3>
+
+<div class="balance" id="balance">
+$100.00
+</div>
+
+<h3> Profit</h3>
+
+<div class="profit" id="profit">
+$0.00
+</div>
+
+<div class="notice">
+
+<strong> Credit</strong>
+
+<p>
+You have received <strong>$100.00</strong> in credits to explore the platform.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Withdrawal</h3>
+
+<p>
+Minimum balance required:
+<strong>$500.00</strong>
+</p>
+
+<button class="withdraw" disabled>
+Withdrawal Locked
+</button>
+
+<small>
+Increase your balance to at least $500.00 before a withdrawal request can be submitted.
+</small>
+
+</div>
+
+<div class="card">
+
+<h3>Announcements</h3>
+
+<p>
+No announcements available.
+</p>
+
+</div>
+
+<button class="logout">
+Logout
+</button>
+
+</div>
+
+</body>
+</html>

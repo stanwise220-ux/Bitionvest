@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BitionInvest Admin</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.admin{
+max-width:700px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:#161B22;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.card h3{
+color:#FFD700;
+margin-bottom:15px;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border:none;
+border-radius:8px;
+background:#222;
+color:white;
+}
+
+textarea{
+height:100px;
+resize:none;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:8px;
+background:#FFD700;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+.logout{
+background:#c62828;
+color:white;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.stat{
+background:#222;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+
+.stat h2{
+color:#FFD700;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="admin">
+
+<h2 style="text-align:center;color:#FFD700;">
+Admin Dashboard
+</h2>
+
+<div class="card">
+
+<h3>Platform Overview</h3>
+
+<div class="stats">
+
+<div class="stat">
+<h2 id="totalUsers">0</h2>
+<p>Users</p>
+</div>
+
+<div class="stat">
+<h2 id="withdrawals">0</h2>
+<p>Pending Withdrawals</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Update User</h3>
+
+<input type="email" placeholder="User Email">
+
+<input type="number" placeholder="Demo Balance">
+
+<input type="number" placeholder="Demo Profit">
+
+<button>
+Save Changes
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Announcement</h3>
+
+<textarea placeholder="Write an announcement..."></textarea>
+
+<button>
+Send Announcement
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Withdrawal Requests</h3>
+
+<p>No pending requests.</p>
+
+</div>
+
+<button class="logout">
+Logout
+</button>
+
+</div>
+
+</body>
+</html>
